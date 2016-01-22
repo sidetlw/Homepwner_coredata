@@ -10,18 +10,41 @@
 #import "BNRItemsTableViewController.h"
 #import "BNRItemStore.h"
 
+NSString * const BNRNextItemValuePrefsKey = @"NextItemValue";
+NSString * const BNRNextItemNamePrefsKey = @"NextItemName";
+
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
++(void)initialize
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *dic = @{BNRNextItemValuePrefsKey:@75,
+                          BNRNextItemNamePrefsKey:@"Coffee cup"
+                          };
+    [defaults registerDefaults:dic];
+}
+
+-(BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    return YES;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    BNRItemsTableViewController *itemsTableViewController = [[BNRItemsTableViewController alloc] init];
-    UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:itemsTableViewController];
-    self.window.rootViewController = navigation;
+    if (self.window.rootViewController == nil) {
+        BNRItemsTableViewController *itemsTableViewController = [[BNRItemsTableViewController alloc] init];
+        UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:itemsTableViewController];
+        
+        navigation.restorationIdentifier = NSStringFromClass([navigation class]);
+        
+        self.window.rootViewController = navigation;
+    }
+    
     return YES;
 }
 
@@ -55,5 +78,29 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+#pragma -mark restored
+
+-(BOOL)application:(UIApplication *)application shouldSaveApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
+-(BOOL)application:(UIApplication *)application shouldRestoreApplicationState:(NSCoder *)coder
+{
+    return YES;
+}
+
+-(UIViewController *)application:(UIApplication *)application viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder
+{
+    UIViewController *vc = [[UINavigationController alloc] init];
+    vc.restorationIdentifier = [identifierComponents lastObject];
+    
+    if ([identifierComponents count] == 1) {
+        self.window.rootViewController = vc;
+    }
+    return vc;
+}
+
 
 @end

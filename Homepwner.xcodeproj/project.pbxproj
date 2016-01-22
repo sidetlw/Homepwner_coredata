@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F15CCED71C2D49BB004318F3 /* TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F15CCED61C2D49BB004318F3 /* TableView.m */; settings = {ASSET_TAGS = (); }; };
+		F10039CD1C40C24F00C3091F /* BNRAssetTypeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F10039CC1C40C24F00C3091F /* BNRAssetTypeTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F10039D11C40FB5400C3091F /* BNRAddNewTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F10039CF1C40FB5400C3091F /* BNRAddNewTypeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F10039D21C40FB5400C3091F /* BNRAddNewTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F10039D01C40FB5400C3091F /* BNRAddNewTypeViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		F10039D41C4E84B600C3091F /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F10039D31C4E84B500C3091F /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
+		F10039D51C4E889300C3091F /* CameraOverLayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F10039D71C4E889300C3091F /* CameraOverLayView.xib */; };
+		F10039EF1C4E8D4200C3091F /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F10039F11C4E8D4200C3091F /* DatePickerViewController.xib */; };
 		F15CCEDB1C2D804F004318F3 /* BNRDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F15CCED91C2D804F004318F3 /* BNRDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F15CCEDC1C2D804F004318F3 /* BNRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F15CCEDA1C2D804F004318F3 /* BNRDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F15CCEE01C2E79FA004318F3 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F15CCEDE1C2E79FA004318F3 /* DatePickerViewController.m */; settings = {ASSET_TAGS = (); }; };
-		F15CCEE11C2E79FA004318F3 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F15CCEDF1C2E79FA004318F3 /* DatePickerViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F15CCEE41C2F01B0004318F3 /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F15CCEE31C2F01B0004318F3 /* BNRImageStore.m */; settings = {ASSET_TAGS = (); }; };
-		F15CCEE61C2F13AF004318F3 /* CameraOverLayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F15CCEE51C2F13AF004318F3 /* CameraOverLayView.xib */; settings = {ASSET_TAGS = (); }; };
 		F1DC05821C2BE3DB0074ED92 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DC05811C2BE3DB0074ED92 /* main.m */; };
 		F1DC05851C2BE3DB0074ED92 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DC05841C2BE3DB0074ED92 /* AppDelegate.m */; };
 		F1DC05881C2BE3DB0074ED92 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DC05871C2BE3DB0074ED92 /* ViewController.m */; };
@@ -22,13 +25,16 @@
 		F1DC05901C2BE3DB0074ED92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1DC058E1C2BE3DB0074ED92 /* LaunchScreen.storyboard */; };
 		F1DC059B1C2BE3DB0074ED92 /* HomepwnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DC059A1C2BE3DB0074ED92 /* HomepwnerTests.m */; };
 		F1DC05A61C2BE3DB0074ED92 /* HomepwnerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DC05A51C2BE3DB0074ED92 /* HomepwnerUITests.m */; };
-		F1DC05B51C2BE4780074ED92 /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DC05B41C2BE4780074ED92 /* BNRItem.m */; settings = {ASSET_TAGS = (); }; };
 		F1DC05B81C2BE5370074ED92 /* BNRItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DC05B71C2BE5370074ED92 /* BNRItemsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F1DC05BB1C2BE7B50074ED92 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DC05BA1C2BE7B50074ED92 /* BNRItemStore.m */; settings = {ASSET_TAGS = (); }; };
 		F1DC05C61C2C28910074ED92 /* HeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1DC05C51C2C28910074ED92 /* HeadView.xib */; settings = {ASSET_TAGS = (); }; };
 		F1F3A29E1C3A5D9200F9B31D /* BNRItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F3A29D1C3A5D9200F9B31D /* BNRItemCell.m */; settings = {ASSET_TAGS = (); }; };
 		F1F3A2A01C3A5DCF00F9B31D /* BNRItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F3A29F1C3A5DCF00F9B31D /* BNRItemCell.xib */; settings = {ASSET_TAGS = (); }; };
 		F1F3A2A81C3AAE3500F9B31D /* BNRImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F3A2A71C3AAE3500F9B31D /* BNRImageViewController.m */; settings = {ASSET_TAGS = (); }; };
+		F1F3A2FA1C3FA62E00F9B31D /* BNRItem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1F3A2F81C3FA62D00F9B31D /* BNRItem.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		F1F3A2FD1C3FA81700F9B31D /* BNRImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F3A2FC1C3FA81700F9B31D /* BNRImageTransformer.m */; settings = {ASSET_TAGS = (); }; };
+		F1F3A3031C3FB3F400F9B31D /* BNRItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F3A3001C3FB3F400F9B31D /* BNRItem+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		F1F3A3041C3FB3F400F9B31D /* BNRItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F3A3021C3FB3F400F9B31D /* BNRItem.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,26 +55,39 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F15CCED51C2D49BB004318F3 /* TableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableView.h; sourceTree = "<group>"; };
-		F15CCED61C2D49BB004318F3 /* TableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableView.m; sourceTree = "<group>"; };
+		F10039CB1C40C24F00C3091F /* BNRAssetTypeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRAssetTypeTableViewController.h; sourceTree = "<group>"; };
+		F10039CC1C40C24F00C3091F /* BNRAssetTypeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRAssetTypeTableViewController.m; sourceTree = "<group>"; };
+		F10039CE1C40FB5400C3091F /* BNRAddNewTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRAddNewTypeViewController.h; sourceTree = "<group>"; };
+		F10039CF1C40FB5400C3091F /* BNRAddNewTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRAddNewTypeViewController.m; sourceTree = "<group>"; };
+		F10039D01C40FB5400C3091F /* BNRAddNewTypeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRAddNewTypeViewController.xib; sourceTree = "<group>"; };
+		F10039D31C4E84B500C3091F /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		F10039E41C4E8C5900C3091F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F10039E51C4E8C5900C3091F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F10039E61C4E8C5A00C3091F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CameraOverLayView.xib; sourceTree = "<group>"; };
+		F10039E81C4E8CA400C3091F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/CameraOverLayView.strings"; sourceTree = "<group>"; };
+		F10039E91C4E8CFB00C3091F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		F10039EA1C4E8CFC00C3091F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		F10039EB1C4E8CFC00C3091F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/CameraOverLayView.strings"; sourceTree = "<group>"; };
+		F10039EC1C4E8D2C00C3091F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		F10039ED1C4E8D2C00C3091F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F10039EE1C4E8D2C00C3091F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/CameraOverLayView.strings; sourceTree = "<group>"; };
+		F10039F01C4E8D4200C3091F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DatePickerViewController.xib; sourceTree = "<group>"; };
+		F10039F31C4E8D4B00C3091F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/DatePickerViewController.strings"; sourceTree = "<group>"; };
+		F10039F51C4E8D4F00C3091F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DatePickerViewController.strings; sourceTree = "<group>"; };
 		F15CCED81C2D804F004318F3 /* BNRDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRDetailViewController.h; sourceTree = "<group>"; };
 		F15CCED91C2D804F004318F3 /* BNRDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRDetailViewController.m; sourceTree = "<group>"; };
 		F15CCEDA1C2D804F004318F3 /* BNRDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRDetailViewController.xib; sourceTree = "<group>"; };
 		F15CCEDD1C2E79FA004318F3 /* DatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatePickerViewController.h; sourceTree = "<group>"; };
 		F15CCEDE1C2E79FA004318F3 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
-		F15CCEDF1C2E79FA004318F3 /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
 		F15CCEE21C2F01B0004318F3 /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
 		F15CCEE31C2F01B0004318F3 /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
-		F15CCEE51C2F13AF004318F3 /* CameraOverLayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraOverLayView.xib; sourceTree = "<group>"; };
 		F1DC057D1C2BE3DB0074ED92 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1DC05811C2BE3DB0074ED92 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F1DC05831C2BE3DB0074ED92 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F1DC05841C2BE3DB0074ED92 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F1DC05861C2BE3DB0074ED92 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F1DC05871C2BE3DB0074ED92 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F1DC058A1C2BE3DB0074ED92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1DC058C1C2BE3DB0074ED92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F1DC058F1C2BE3DB0074ED92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1DC05911C2BE3DB0074ED92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1DC05961C2BE3DB0074ED92 /* HomepwnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomepwnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1DC059A1C2BE3DB0074ED92 /* HomepwnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomepwnerTests.m; sourceTree = "<group>"; };
@@ -76,8 +95,6 @@
 		F1DC05A11C2BE3DB0074ED92 /* HomepwnerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomepwnerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1DC05A51C2BE3DB0074ED92 /* HomepwnerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomepwnerUITests.m; sourceTree = "<group>"; };
 		F1DC05A71C2BE3DB0074ED92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1DC05B31C2BE4780074ED92 /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItem.h; sourceTree = "<group>"; };
-		F1DC05B41C2BE4780074ED92 /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItem.m; sourceTree = "<group>"; };
 		F1DC05B61C2BE5370074ED92 /* BNRItemsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemsTableViewController.h; sourceTree = "<group>"; };
 		F1DC05B71C2BE5370074ED92 /* BNRItemsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemsTableViewController.m; sourceTree = "<group>"; };
 		F1DC05B91C2BE7B50074ED92 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
@@ -88,6 +105,13 @@
 		F1F3A29F1C3A5DCF00F9B31D /* BNRItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRItemCell.xib; sourceTree = "<group>"; };
 		F1F3A2A61C3AAE3500F9B31D /* BNRImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageViewController.h; sourceTree = "<group>"; };
 		F1F3A2A71C3AAE3500F9B31D /* BNRImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageViewController.m; sourceTree = "<group>"; };
+		F1F3A2F91C3FA62E00F9B31D /* BNRItem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BNRItem.xcdatamodel; sourceTree = "<group>"; };
+		F1F3A2FB1C3FA81700F9B31D /* BNRImageTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageTransformer.h; sourceTree = "<group>"; };
+		F1F3A2FC1C3FA81700F9B31D /* BNRImageTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageTransformer.m; sourceTree = "<group>"; };
+		F1F3A2FF1C3FB3F400F9B31D /* BNRItem+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "BNRItem+CoreDataProperties.h"; path = "../BNRItem+CoreDataProperties.h"; sourceTree = "<group>"; };
+		F1F3A3001C3FB3F400F9B31D /* BNRItem+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "BNRItem+CoreDataProperties.m"; path = "../BNRItem+CoreDataProperties.m"; sourceTree = "<group>"; };
+		F1F3A3011C3FB3F400F9B31D /* BNRItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRItem.h; path = ../BNRItem.h; sourceTree = "<group>"; };
+		F1F3A3021C3FB3F400F9B31D /* BNRItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRItem.m; path = ../BNRItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,9 +170,8 @@
 				F1DC058C1C2BE3DB0074ED92 /* Assets.xcassets */,
 				F1DC058E1C2BE3DB0074ED92 /* LaunchScreen.storyboard */,
 				F1DC05911C2BE3DB0074ED92 /* Info.plist */,
-				F1DC05B31C2BE4780074ED92 /* BNRItem.h */,
-				F1DC05B41C2BE4780074ED92 /* BNRItem.m */,
 				F1DC05801C2BE3DB0074ED92 /* Supporting Files */,
+				F1F3A2FE1C3FA82300F9B31D /* core data */,
 				F1DC05B61C2BE5370074ED92 /* BNRItemsTableViewController.h */,
 				F1DC05B71C2BE5370074ED92 /* BNRItemsTableViewController.m */,
 				F1F3A29C1C3A5D9200F9B31D /* BNRItemCell.h */,
@@ -164,12 +187,16 @@
 				F15CCED81C2D804F004318F3 /* BNRDetailViewController.h */,
 				F15CCED91C2D804F004318F3 /* BNRDetailViewController.m */,
 				F15CCEDA1C2D804F004318F3 /* BNRDetailViewController.xib */,
+				F10039CB1C40C24F00C3091F /* BNRAssetTypeTableViewController.h */,
+				F10039CC1C40C24F00C3091F /* BNRAssetTypeTableViewController.m */,
+				F10039CE1C40FB5400C3091F /* BNRAddNewTypeViewController.h */,
+				F10039CF1C40FB5400C3091F /* BNRAddNewTypeViewController.m */,
+				F10039D01C40FB5400C3091F /* BNRAddNewTypeViewController.xib */,
 				F15CCEDD1C2E79FA004318F3 /* DatePickerViewController.h */,
 				F15CCEDE1C2E79FA004318F3 /* DatePickerViewController.m */,
-				F15CCEDF1C2E79FA004318F3 /* DatePickerViewController.xib */,
-				F15CCED51C2D49BB004318F3 /* TableView.h */,
-				F15CCED61C2D49BB004318F3 /* TableView.m */,
-				F15CCEE51C2F13AF004318F3 /* CameraOverLayView.xib */,
+				F10039F11C4E8D4200C3091F /* DatePickerViewController.xib */,
+				F10039D71C4E889300C3091F /* CameraOverLayView.xib */,
+				F10039D31C4E84B500C3091F /* Settings.bundle */,
 			);
 			path = Homepwner;
 			sourceTree = "<group>";
@@ -198,6 +225,20 @@
 				F1DC05A71C2BE3DB0074ED92 /* Info.plist */,
 			);
 			path = HomepwnerUITests;
+			sourceTree = "<group>";
+		};
+		F1F3A2FE1C3FA82300F9B31D /* core data */ = {
+			isa = PBXGroup;
+			children = (
+				F1F3A2F81C3FA62D00F9B31D /* BNRItem.xcdatamodeld */,
+				F1F3A2FB1C3FA81700F9B31D /* BNRImageTransformer.h */,
+				F1F3A2FC1C3FA81700F9B31D /* BNRImageTransformer.m */,
+				F1F3A2FF1C3FB3F400F9B31D /* BNRItem+CoreDataProperties.h */,
+				F1F3A3001C3FB3F400F9B31D /* BNRItem+CoreDataProperties.m */,
+				F1F3A3011C3FB3F400F9B31D /* BNRItem.h */,
+				F1F3A3021C3FB3F400F9B31D /* BNRItem.m */,
+			);
+			name = "core data";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,8 +324,9 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				"zh-Hans",
+				en,
 			);
 			mainGroup = F1DC05741C2BE3DA0074ED92;
 			productRefGroup = F1DC057E1C2BE3DB0074ED92 /* Products */;
@@ -303,10 +345,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F15CCEE61C2F13AF004318F3 /* CameraOverLayView.xib in Resources */,
+				F10039D51C4E889300C3091F /* CameraOverLayView.xib in Resources */,
 				F1F3A2A01C3A5DCF00F9B31D /* BNRItemCell.xib in Resources */,
-				F15CCEE11C2E79FA004318F3 /* DatePickerViewController.xib in Resources */,
+				F10039D41C4E84B600C3091F /* Settings.bundle in Resources */,
+				F10039EF1C4E8D4200C3091F /* DatePickerViewController.xib in Resources */,
 				F1DC05901C2BE3DB0074ED92 /* LaunchScreen.storyboard in Resources */,
+				F10039D21C40FB5400C3091F /* BNRAddNewTypeViewController.xib in Resources */,
 				F1DC058D1C2BE3DB0074ED92 /* Assets.xcassets in Resources */,
 				F1DC058B1C2BE3DB0074ED92 /* Main.storyboard in Resources */,
 				F1DC05C61C2C28910074ED92 /* HeadView.xib in Resources */,
@@ -335,17 +379,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1F3A2FA1C3FA62E00F9B31D /* BNRItem.xcdatamodeld in Sources */,
 				F15CCEE41C2F01B0004318F3 /* BNRImageStore.m in Sources */,
 				F15CCEDB1C2D804F004318F3 /* BNRDetailViewController.m in Sources */,
+				F1F3A3031C3FB3F400F9B31D /* BNRItem+CoreDataProperties.m in Sources */,
 				F1DC05B81C2BE5370074ED92 /* BNRItemsTableViewController.m in Sources */,
+				F10039CD1C40C24F00C3091F /* BNRAssetTypeTableViewController.m in Sources */,
+				F1F3A2FD1C3FA81700F9B31D /* BNRImageTransformer.m in Sources */,
 				F1F3A29E1C3A5D9200F9B31D /* BNRItemCell.m in Sources */,
+				F1F3A3041C3FB3F400F9B31D /* BNRItem.m in Sources */,
 				F1DC05881C2BE3DB0074ED92 /* ViewController.m in Sources */,
-				F1DC05B51C2BE4780074ED92 /* BNRItem.m in Sources */,
 				F1DC05851C2BE3DB0074ED92 /* AppDelegate.m in Sources */,
 				F1DC05821C2BE3DB0074ED92 /* main.m in Sources */,
 				F1DC05BB1C2BE7B50074ED92 /* BNRItemStore.m in Sources */,
 				F15CCEE01C2E79FA004318F3 /* DatePickerViewController.m in Sources */,
-				F15CCED71C2D49BB004318F3 /* TableView.m in Sources */,
+				F10039D11C40FB5400C3091F /* BNRAddNewTypeViewController.m in Sources */,
 				F1F3A2A81C3AAE3500F9B31D /* BNRImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,10 +430,33 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F10039D71C4E889300C3091F /* CameraOverLayView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F10039E61C4E8C5A00C3091F /* Base */,
+				F10039E81C4E8CA400C3091F /* zh-Hans */,
+				F10039EB1C4E8CFC00C3091F /* zh-Hant */,
+				F10039EE1C4E8D2C00C3091F /* en */,
+			);
+			name = CameraOverLayView.xib;
+			sourceTree = "<group>";
+		};
+		F10039F11C4E8D4200C3091F /* DatePickerViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F10039F01C4E8D4200C3091F /* Base */,
+				F10039F31C4E8D4B00C3091F /* zh-Hans */,
+				F10039F51C4E8D4F00C3091F /* en */,
+			);
+			name = DatePickerViewController.xib;
+			sourceTree = "<group>";
+		};
 		F1DC05891C2BE3DB0074ED92 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F1DC058A1C2BE3DB0074ED92 /* Base */,
+				F10039E41C4E8C5900C3091F /* Base */,
+				F10039E91C4E8CFB00C3091F /* zh-Hant */,
+				F10039EC1C4E8D2C00C3091F /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -393,7 +464,9 @@
 		F1DC058E1C2BE3DB0074ED92 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F1DC058F1C2BE3DB0074ED92 /* Base */,
+				F10039E51C4E8C5900C3091F /* Base */,
+				F10039EA1C4E8CFC00C3091F /* zh-Hant */,
+				F10039ED1C4E8D2C00C3091F /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -593,6 +666,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F1F3A2F81C3FA62D00F9B31D /* BNRItem.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F1F3A2F91C3FA62E00F9B31D /* BNRItem.xcdatamodel */,
+			);
+			currentVersion = F1F3A2F91C3FA62E00F9B31D /* BNRItem.xcdatamodel */;
+			name = BNRItem.xcdatamodeld;
+			path = ../BNRItem.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F1DC05751C2BE3DA0074ED92 /* Project object */;
 }

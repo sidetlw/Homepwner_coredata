@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BNRItemsTableViewController : UITableViewController <UITableViewDataSource, UIPopoverPresentationControllerDelegate>
+@interface BNRItemsTableViewController : UITableViewController <UITableViewDataSource, UIPopoverPresentationControllerDelegate, UIViewControllerRestoration>
 
 @end

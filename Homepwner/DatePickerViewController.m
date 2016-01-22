@@ -11,6 +11,7 @@
 
 @interface DatePickerViewController ()
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UIButton *quedingButton;
 
 @end
 
@@ -18,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
 }
 

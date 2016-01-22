@@ -14,20 +14,22 @@
 
 @implementation BNRImageViewController
 
-//-(void)loadView
-//{
-//    [super loadView];
-//     _imageView = [[UIImageView alloc] init];
-//    _imageView.contentMode = UIViewContentModeScaleAspectFit;
-//    UIScrollView *scorllview = [[UIScrollView alloc] init];
-//    CGSize size = [[UIScreen mainScreen] bounds].size;
-//    scorllview.contentSize = CGSizeMake(size.width, size.height);
-//    scorllview.minimumZoomScale = 1.0;
-//    scorllview.maximumZoomScale = 2.0;
-//    scorllview.delegate = self;
-//    [scorllview addSubview:_imageView];
-//    self.view = scorllview;
-//}
+-(void)loadView
+{
+    [super loadView];
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screenSize.width, screenSize.height)];
+    _imageView.contentMode = UIViewContentModeScaleAspectFit;
+    UIScrollView *scorllview = [[UIScrollView alloc] init];
+    
+    scorllview.contentSize = CGSizeMake(screenSize.width + 10.0 , screenSize.height);
+    scorllview.minimumZoomScale = 1.0;
+    scorllview.maximumZoomScale = 2.0;
+    scorllview.delegate = self;
+    [scorllview addSubview:_imageView];
+    scorllview.backgroundColor = [UIColor blackColor];
+    self.view = scorllview;
+}
 
 - (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView    // return a view that will be scaled. if delegate returns nil, nothing happens
 {
@@ -38,6 +40,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
+    /*
     UIScrollView *scorllview = nil;
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         scorllview = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 300, 470)];
@@ -59,6 +62,7 @@
     scorllview.delegate = self;
     [scorllview addSubview:_imageView];
     [self.view addSubview:scorllview];
+     */
 }
 
 -(void)viewWillAppear:(BOOL)animated

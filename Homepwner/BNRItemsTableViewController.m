@@ -9,13 +9,12 @@
 #import "BNRItemsTableViewController.h"
 #import "BNRItem.h"
 #import "BNRItemStore.h"
-#import "TableView.h"
 #import "BNRDetailViewController.h"
 #import "BNRItemCell.h"
 #import "BNRImageViewController.h"
 #import "BNRImageStore.h"
 
-@interface BNRItemsTableViewController ()
+@interface BNRItemsTableViewController () <UIDataSourceModelAssociation>
 @property (strong, nonatomic) IBOutlet UIView *headView;
 
 @end
@@ -25,11 +24,15 @@
 {
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
-        for (int i = 0; i < 5; i++) {
+      //  for (int i = 0; i < 5; i++) {
            // [[BNRItemStore shareStore] createItem];
-        }
+        //}
         
         self.navigationItem.title = @"Homepwner";
+        
+        self.restorationIdentifier = NSStringFromClass([self class]);
+        self.restorationClass = [self class];
+        
         self.navigationItem.leftBarButtonItem = self.editButtonItem;
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
     }
@@ -67,6 +70,8 @@
    // [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
     UINib *nib = [UINib nibWithNibName:@"BNRItemCell" bundle:[NSBundle mainBundle]];
     [self.tableView registerNib:nib forCellReuseIdentifier:@"BNRItemCell"];
+    
+    self.tableView.restorationIdentifier = @"BNRItemsTableViewControllerTableView";
 
 }
 
@@ -80,6 +85,7 @@
     [super viewWillAppear:animated];
     [self.tableView reloadData];
 }
+
 
 #pragma mark - Table view data source
 
@@ -99,9 +105,6 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-   // UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
-    
-    // Configure the cell...
     BNRItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BNRItemCell" forIndexPath:indexPath];
     NSArray *items = [[BNRItemStore shareStore] allItems];
     if (indexPath.row == [items count]) {
@@ -148,8 +151,6 @@
             presentationController.sourceView = cell.avadarImage;
             CGRect rect = cell.avadarImage.bounds;
             presentationController.sourceRect = CGRectMake(rect.origin.x , rect.origin.y, rect.size.width, rect.size.height);
-            
-           
         };
     }
     return cell;
@@ -160,7 +161,7 @@
     [[self presentedViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)toggleEditingMode:(id)sender {
+- (IBAction)toggleEditingMode:(id)sender {  //关联HeadView.xib 已弃用
     if (self.isEditing) {
         [sender setTitle:@"Edit" forState:UIControlStateNormal];
         [self setEditing:NO animated:YES];
@@ -180,6 +181,8 @@
     };
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:detailController];
+    navigationController.restorationIdentifier = NSStringFromClass([navigationController class]);
+    
     navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
     navigationController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentViewController:navigationController animated:YES completion:nil];
@@ -193,9 +196,10 @@
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
 */
+
 
 /*
 // Override to support editing the table view.*/
@@ -277,6 +281,51 @@
     detailViewController.item = item;
     [[self navigationController] pushViewController:detailViewController animated:YES];
 }
+
+#pragma mark -restored
++ (nullable UIViewController *) viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder
+{
+    return [[self alloc] init];
+}
+
+-(void)encodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    [coder encodeBool:self.editing forKey:@"self.editing"];
+    
+    
+    [super encodeRestorableStateWithCoder:coder];
+    
+}
+
+-(void)decodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    self.editing = [coder decodeBoolForKey:@"self.editing"];
+    
+    [super decodeRestorableStateWithCoder:coder];
+}
+
+- (nullable NSString *) modelIdentifierForElementAtIndexPath:(NSIndexPath *)idx inView:(UIView *)view
+{
+    NSString *identifier = nil;
+    NSArray *items = [[BNRItemStore shareStore] allItems];
+    BNRItem *item = items[idx.row];
+    identifier = item.itemKey;
+    return identifier;
+}
+- (nullable NSIndexPath *) indexPathForElementWithModelIdentifier:(NSString *)identifier inView:(UIView *)view
+{
+    NSIndexPath *indexPath = nil;
+     NSArray *items = [[BNRItemStore shareStore] allItems];
+    for (BNRItem *item in items) {
+        if ([item.itemKey isEqualToString:identifier] ) {
+            NSInteger row = [items indexOfObject:item];
+            indexPath = [NSIndexPath indexPathForRow:row inSection:0];
+            break;
+        }
+    }
+    return indexPath;
+}
+
 /*
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BNRAddNewTypeViewController">
+            <connections>
+                <outlet property="textField" destination="az9-l5-11Y" id="oa4-Rg-lVY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="az9-l5-11Y">
+                    <rect key="frame" x="114" y="109" width="478" height="30"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="输入类别:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beQ-z3-PSb">
+                    <rect key="frame" x="21" y="112" width="73" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EjY-GQ-01n">
+                    <rect key="frame" x="114" y="158" width="91" height="25"/>
+                    <animations/>
+                    <color key="backgroundColor" red="0.17618375450000001" green="0.68645438759999999" blue="0.1177479216" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="4G0-o6-yFw"/>
+                        <constraint firstAttribute="width" constant="91" id="SKN-9M-88Y"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="增加">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addButtonTapped:" destination="-1" eventType="touchUpInside" id="GCG-Mw-rxE"/>
+                    </connections>
+                </button>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="az9-l5-11Y" firstAttribute="leading" secondItem="beQ-z3-PSb" secondAttribute="trailing" constant="20" id="4VJ-Y6-LHb"/>
+                <constraint firstItem="beQ-z3-PSb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="112" id="4cq-8L-z3R"/>
+                <constraint firstItem="beQ-z3-PSb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="21" id="Bia-7l-d5A"/>
+                <constraint firstAttribute="trailing" secondItem="az9-l5-11Y" secondAttribute="trailing" constant="8" id="JDX-Ue-daX"/>
+                <constraint firstItem="EjY-GQ-01n" firstAttribute="leading" secondItem="az9-l5-11Y" secondAttribute="leading" id="gtn-dU-NTW"/>
+                <constraint firstItem="az9-l5-11Y" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="109" id="iJ7-dw-jUj"/>
+                <constraint firstItem="EjY-GQ-01n" firstAttribute="top" secondItem="az9-l5-11Y" secondAttribute="bottom" constant="19" id="jol-2w-h3N"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BNRDetailViewController">
             <connections>
+                <outlet property="assetType" destination="kaF-a4-oWt" id="zRO-su-0NX"/>
                 <outlet property="dateLabel" destination="Gk4-sv-45p" id="qp9-vR-Spv"/>
                 <outlet property="imageView" destination="Pwy-GS-9Lf" id="UnX-bZ-mA5"/>
                 <outlet property="nameField" destination="jYv-WQ-Imh" id="3oj-Q7-ePs"/>
@@ -29,13 +30,6 @@
                         <outlet property="delegate" destination="-1" id="Oku-tP-bae"/>
                     </connections>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Serial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCk-03-A3v">
-                    <rect key="frame" x="21" y="144" width="43" height="21"/>
-                    <animations/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9UG-NP-wvG">
                     <rect key="frame" x="80" y="141" width="272" height="30"/>
                     <animations/>
@@ -97,6 +91,12 @@
                                 <action selector="deleteButtonTapped:" destination="-1" id="w2F-7o-bRD"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem width="32" systemItem="fixedSpace" id="xVP-Dk-UCi"/>
+                        <barButtonItem title="Item" width="232" id="kaF-a4-oWt">
+                            <connections>
+                                <action selector="assetTypeButtonTapped:" destination="-1" id="qJw-ey-wE6"/>
+                            </connections>
+                        </barButtonItem>
                     </items>
                 </toolbar>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pwy-GS-9Lf">
@@ -105,6 +105,13 @@
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ie1-qP-jQN">
                     <rect key="frame" x="19" y="94" width="45" height="21"/>
+                    <animations/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Serial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCk-03-A3v">
+                    <rect key="frame" x="21" y="144" width="43" height="21"/>
                     <animations/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

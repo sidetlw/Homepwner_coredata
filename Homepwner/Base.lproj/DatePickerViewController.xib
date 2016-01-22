@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DatePickerViewController">
             <connections>
                 <outlet property="datePicker" destination="w43-WR-Vla" id="kN1-oZ-BH4"/>
+                <outlet property="quedingButton" destination="Lw2-Gn-zyG" id="oYq-KX-nyv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

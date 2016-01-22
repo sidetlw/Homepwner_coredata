@@ -11,6 +11,8 @@
 #import "DatePickerViewController.h"
 #import "BNRImageStore.h"
 #import "BNRItemStore.h"
+#import "BNRAssetTypeTableViewController.h"
+#import "AppDelegate.h"
 
 @interface BNRDetailViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
@@ -21,6 +23,8 @@
 @property (strong, nonatomic) IBOutlet UIView *cameraOverView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *takePhotoButton;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *assetType;
+
 @end
 
 @implementation BNRDetailViewController
@@ -29,6 +33,9 @@
 {
     self = [super initWithNibName:nil bundle:nil];
     if (self) {
+        self.restorationIdentifier = NSStringFromClass([self class]);
+        self.restorationClass = [self class];
+        
         if (isNew == YES) {
             UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(save)];
             self.navigationItem.rightBarButtonItem = doneItem;
@@ -36,7 +43,7 @@
             UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel)];
             self.navigationItem.leftBarButtonItem = cancelItem;
         }
-    }
+   }
 
     return self;
 }
@@ -61,6 +68,8 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
     self.nameField.text = self.item.itemName;
     self.serialField.text = self.item.serialNumber;
     self.valueField.text = [NSString stringWithFormat:@"%d", self.item.valueInDollars];
@@ -71,13 +80,36 @@
     self.dateLabel.text = dateString;
     
     self.imageView.image = [[BNRImageStore sharedStore] imageForKey:self.item.itemKey];
+    
+    NSManagedObject *type = self.item.assetType;
+    if (type != nil) {
+         self.assetType.title = [[NSString alloc] initWithFormat:@"type:%@",[type valueForKey:@"label"]];
+    }
+    else {
+        self.assetType.title = @"type:none";
+    }
 }
+
+//-(void)viewWillDisappear:(BOOL)animated
+//{
+//    [super viewWillDisappear:animated];
+//    [self.view endEditing:YES];
+//    self.item.itemName = self.nameField.text;
+//    self.item.serialNumber = self.serialField.text;
+//   
+//    int newValue = [self.valueField.text intValue];
+//    if (newValue != self.item.valueInDollars) {
+//        self.item.valueInDollars = newValue;
+//        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//        [defaults setInteger:newValue forKey:BNRNextItemValuePrefsKey];
+//    }
+//}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    self.item.itemName = self.nameField.text;
-    self.item.serialNumber = self.serialField.text;
-    self.item.valueInDollars = self.valueField.text.intValue;
+//    self.item.itemName = self.nameField.text;
+//    self.item.serialNumber = self.serialField.text;
+//    self.item.valueInDollars = self.valueField.text.intValue;
    
     [textField resignFirstResponder];
     return YES;
@@ -135,7 +167,6 @@
 
 - (IBAction)deleteButtonTapped:(id)sender {
     [[BNRImageStore sharedStore] deleteImageForKey:self.item.itemKey];
-    [self.item delteThumbnail];
     self.imageView.image = [[BNRImageStore sharedStore] imageForKey:self.item.itemKey];
 }
 
@@ -154,8 +185,13 @@
 {
     self.item.itemName = self.nameField.text;
     self.item.serialNumber = self.serialField.text;
-    self.item.valueInDollars = self.valueField.text.intValue;
 
+    int newValue = [self.valueField.text intValue];
+    if (newValue != self.item.valueInDollars) {
+        self.item.valueInDollars = newValue;
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setInteger:newValue forKey:BNRNextItemValuePrefsKey];
+    }
     [self.presentingViewController dismissViewControllerAnimated:YES completion:self.dismissBlock];
 }
 
@@ -165,6 +201,58 @@
     [[BNRItemStore shareStore] removeItem:self.item];
     
     [self.presentingViewController dismissViewControllerAnimated:YES completion:self.dismissBlock];
+}
+
+- (IBAction)assetTypeButtonTapped:(id)sender {
+    BNRAssetTypeTableViewController *vc = [[BNRAssetTypeTableViewController alloc] init];
+    vc.item = self.item;
+    vc.dissmissBlock = ^{
+        self.assetType.title = [self.item.assetType valueForKey:@"label"];
+    };
+    
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    navVC.modalPresentationStyle = UIModalPresentationPopover;
+    [self presentViewController:navVC animated:YES completion:nil];
+    
+    UIPopoverPresentationController *presentVC = navVC.popoverPresentationController;
+    presentVC.barButtonItem = self.assetType;
+}
+
+#pragma mark - restored
++ (nullable UIViewController *) viewControllerWithRestorationIdentifierPath:(NSArray *)identifierComponents coder:(NSCoder *)coder
+{
+    BOOL isnew = NO;
+    if ([identifierComponents count] == 3) {
+        isnew = YES;
+    }
+    return [[self alloc] initForNewItem:isnew];
+}
+
+-(void)encodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    [coder encodeObject:self.item.itemKey forKey:@"item.itemKey"];
+    self.item.itemName = self.nameField.text;
+    self.item.serialNumber = self.serialField.text;
+    self.item.valueInDollars = [self.valueField.text intValue];
+    
+    [[BNRItemStore shareStore] saveChanges];
+    
+    
+    [super encodeRestorableStateWithCoder:coder];
+}
+
+-(void)decodeRestorableStateWithCoder:(NSCoder *)coder
+{
+    NSString *itemKey = [coder decodeObjectForKey:@"item.itemKey"];
+    NSArray *items = [[BNRItemStore shareStore] allItems];
+    for (BNRItem* item in items) {
+        if ([itemKey isEqualToString:item.itemKey]) {
+            self.item = item;
+            break;
+        }
+    }//for
+    [super decodeRestorableStateWithCoder:coder];
 }
 
 /*

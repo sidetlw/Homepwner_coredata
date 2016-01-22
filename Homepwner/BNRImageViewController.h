@@ -11,5 +11,4 @@
 @interface BNRImageViewController : UIViewController <UIScrollViewDelegate>
 @property (nonatomic) UIImage *image;
 @property (nonatomic) UIImageView *imageView;
-@property (nonatomic) CGSize imageSize;
 @end
