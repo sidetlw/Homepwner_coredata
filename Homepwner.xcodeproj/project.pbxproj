@@ -28,6 +28,8 @@
 		F1DC05B81C2BE5370074ED92 /* BNRItemsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DC05B71C2BE5370074ED92 /* BNRItemsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F1DC05BB1C2BE7B50074ED92 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DC05BA1C2BE7B50074ED92 /* BNRItemStore.m */; settings = {ASSET_TAGS = (); }; };
 		F1DC05C61C2C28910074ED92 /* HeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1DC05C51C2C28910074ED92 /* HeadView.xib */; settings = {ASSET_TAGS = (); }; };
+		F1DEEA761C53528700F968D5 /* PopAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEEA751C53528700F968D5 /* PopAnimation.m */; settings = {ASSET_TAGS = (); }; };
+		F1DEEA791C5380CE00F968D5 /* NavigationInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEEA781C5380CE00F968D5 /* NavigationInteractiveTransition.m */; settings = {ASSET_TAGS = (); }; };
 		F1F3A29E1C3A5D9200F9B31D /* BNRItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F3A29D1C3A5D9200F9B31D /* BNRItemCell.m */; settings = {ASSET_TAGS = (); }; };
 		F1F3A2A01C3A5DCF00F9B31D /* BNRItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F3A29F1C3A5DCF00F9B31D /* BNRItemCell.xib */; settings = {ASSET_TAGS = (); }; };
 		F1F3A2A81C3AAE3500F9B31D /* BNRImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F3A2A71C3AAE3500F9B31D /* BNRImageViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -100,6 +102,10 @@
 		F1DC05B91C2BE7B50074ED92 /* BNRItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemStore.h; sourceTree = "<group>"; };
 		F1DC05BA1C2BE7B50074ED92 /* BNRItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemStore.m; sourceTree = "<group>"; };
 		F1DC05C51C2C28910074ED92 /* HeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeadView.xib; sourceTree = "<group>"; };
+		F1DEEA741C53528700F968D5 /* PopAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopAnimation.h; sourceTree = "<group>"; };
+		F1DEEA751C53528700F968D5 /* PopAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopAnimation.m; sourceTree = "<group>"; };
+		F1DEEA771C5380CE00F968D5 /* NavigationInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationInteractiveTransition.h; sourceTree = "<group>"; };
+		F1DEEA781C5380CE00F968D5 /* NavigationInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationInteractiveTransition.m; sourceTree = "<group>"; };
 		F1F3A29C1C3A5D9200F9B31D /* BNRItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemCell.h; sourceTree = "<group>"; };
 		F1F3A29D1C3A5D9200F9B31D /* BNRItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemCell.m; sourceTree = "<group>"; };
 		F1F3A29F1C3A5DCF00F9B31D /* BNRItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRItemCell.xib; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 				F1DC058E1C2BE3DB0074ED92 /* LaunchScreen.storyboard */,
 				F1DC05911C2BE3DB0074ED92 /* Info.plist */,
 				F1DC05801C2BE3DB0074ED92 /* Supporting Files */,
+				F1DEEA731C53524600F968D5 /* back gesture */,
 				F1F3A2FE1C3FA82300F9B31D /* core data */,
 				F1DC05B61C2BE5370074ED92 /* BNRItemsTableViewController.h */,
 				F1DC05B71C2BE5370074ED92 /* BNRItemsTableViewController.m */,
@@ -225,6 +232,17 @@
 				F1DC05A71C2BE3DB0074ED92 /* Info.plist */,
 			);
 			path = HomepwnerUITests;
+			sourceTree = "<group>";
+		};
+		F1DEEA731C53524600F968D5 /* back gesture */ = {
+			isa = PBXGroup;
+			children = (
+				F1DEEA741C53528700F968D5 /* PopAnimation.h */,
+				F1DEEA751C53528700F968D5 /* PopAnimation.m */,
+				F1DEEA771C5380CE00F968D5 /* NavigationInteractiveTransition.h */,
+				F1DEEA781C5380CE00F968D5 /* NavigationInteractiveTransition.m */,
+			);
+			name = "back gesture";
 			sourceTree = "<group>";
 		};
 		F1F3A2FE1C3FA82300F9B31D /* core data */ = {
@@ -383,10 +401,12 @@
 				F15CCEE41C2F01B0004318F3 /* BNRImageStore.m in Sources */,
 				F15CCEDB1C2D804F004318F3 /* BNRDetailViewController.m in Sources */,
 				F1F3A3031C3FB3F400F9B31D /* BNRItem+CoreDataProperties.m in Sources */,
+				F1DEEA761C53528700F968D5 /* PopAnimation.m in Sources */,
 				F1DC05B81C2BE5370074ED92 /* BNRItemsTableViewController.m in Sources */,
 				F10039CD1C40C24F00C3091F /* BNRAssetTypeTableViewController.m in Sources */,
 				F1F3A2FD1C3FA81700F9B31D /* BNRImageTransformer.m in Sources */,
 				F1F3A29E1C3A5D9200F9B31D /* BNRItemCell.m in Sources */,
+				F1DEEA791C5380CE00F968D5 /* NavigationInteractiveTransition.m in Sources */,
 				F1F3A3041C3FB3F400F9B31D /* BNRItem.m in Sources */,
 				F1DC05881C2BE3DB0074ED92 /* ViewController.m in Sources */,
 				F1DC05851C2BE3DB0074ED92 /* AppDelegate.m in Sources */,

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class BNRItem;
 
-@interface BNRDetailViewController : UIViewController <UITextFieldDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIPopoverPresentationControllerDelegate, UIViewControllerRestoration>
+@interface BNRDetailViewController : UIViewController <UITextFieldDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIPopoverPresentationControllerDelegate, UIViewControllerRestoration,UIGestureRecognizerDelegate>
 @property (nonatomic) BNRItem *item;
 @property (nonatomic,copy) void (^dismissBlock)(void);
 

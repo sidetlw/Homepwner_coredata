@@ -13,6 +13,7 @@
 #import "BNRItemStore.h"
 #import "BNRAssetTypeTableViewController.h"
 #import "AppDelegate.h"
+#import "NavigationInteractiveTransition.h"
 
 @interface BNRDetailViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
@@ -24,6 +25,8 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *takePhotoButton;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *assetType;
+@property (nonatomic) NavigationInteractiveTransition *navigationInteractiveTransition;
+
 
 @end
 
@@ -59,6 +62,12 @@
     // Do any additional setup after loading the view from its nib.
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureTapped)];
     [self.view addGestureRecognizer:gesture];
+    
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(popBackHandel:)];
+    panGesture.delegate = self;
+    [self.navigationController.view addGestureRecognizer:panGesture];
+    _navigationInteractiveTransition = [[NavigationInteractiveTransition alloc] init];
+    self.navigationController.delegate = self.navigationInteractiveTransition;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -69,6 +78,8 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
     
     self.nameField.text = self.item.itemName;
     self.serialField.text = self.item.serialNumber;
@@ -137,6 +148,32 @@
 -(void)gestureTapped
 {
     [self.view endEditing:YES];
+}
+
+-(void)popBackHandel:(UIPanGestureRecognizer *)gesture
+{
+    CGPoint transpoint = [gesture translationInView:self.view];
+    CGPoint point = [gesture locationInView:nil];
+    NSLog(@"translationInView :%f  %f  locationInView:,%f  %f",transpoint.x,transpoint.y,point.x,point.y);
+    CGFloat process = transpoint.x / self.view.bounds.size.width;
+    process = MIN( MAX(0.0, process),1.0);
+    
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        self.navigationInteractiveTransition.percentDrivenInteractiveTransition = [[UIPercentDrivenInteractiveTransition alloc] init];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else if (gesture.state == UIGestureRecognizerStateChanged) {
+        [self.navigationInteractiveTransition.percentDrivenInteractiveTransition updateInteractiveTransition:process];
+    }
+    else if (gesture.state == UIGestureRecognizerStateEnded || gesture.state == UIGestureRecognizerStateCancelled) {
+        if (process > 0.5) {
+            [self.navigationInteractiveTransition.percentDrivenInteractiveTransition finishInteractiveTransition];
+        }
+        else {
+            [self.navigationInteractiveTransition.percentDrivenInteractiveTransition cancelInteractiveTransition];
+        }
+        self.navigationInteractiveTransition.percentDrivenInteractiveTransition = nil;
+    }
 }
 
 - (IBAction)cameraButtonTapped:(id)sender {
@@ -255,6 +292,11 @@
     [super decodeRestorableStateWithCoder:coder];
 }
 
+#pragma mark - gesture delegate
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
+{
+    return [[self.navigationController viewControllers] count] != 1 && ![[self.navigationController valueForKey:@"_isTransitioning"] boolValue];
+}
 /*
 #pragma mark - Navigation
 

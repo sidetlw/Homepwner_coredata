@@ -28,6 +28,10 @@
            // [[BNRItemStore shareStore] createItem];
         //}
         
+        NSLog(@"%@", NSStringFromClass([self class]));
+        NSLog(@"%@", NSStringFromClass([super class]));
+        
+        
         self.navigationItem.title = @"Homepwner";
         
         self.restorationIdentifier = NSStringFromClass([self class]);
@@ -72,8 +76,8 @@
     [self.tableView registerNib:nib forCellReuseIdentifier:@"BNRItemCell"];
     
     self.tableView.restorationIdentifier = @"BNRItemsTableViewControllerTableView";
-
-}
+    self.navigationItem.backBarButtonItem =  [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:nil action:nil];
+  }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -83,6 +87,7 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
     [self.tableView reloadData];
 }
 
@@ -161,7 +166,7 @@
     [[self presentedViewController] dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)toggleEditingMode:(id)sender {  //关联HeadView.xib 已弃用
+- (IBAction)toggleEditingMode:(id)sender {
     if (self.isEditing) {
         [sender setTitle:@"Edit" forState:UIControlStateNormal];
         [self setEditing:NO animated:YES];
