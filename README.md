@@ -5,7 +5,9 @@ Homepwner coredata版本
 
 2.UIImagePickerController访问用户相机和相册。使用UIPopoverPresentationController兼容iPhone和ipad，一套代码共用。
 
-3.使用coredata存储entity在document中。4. UITableViewRowAction 为tableview cell创建自定义action
+3.使用coredata存储entity在document中。    
+4. UITableViewRowAction 为tableview cell创建自定义action     
+5.  增加类似微博的全局拖动返回手势
 
 
 
