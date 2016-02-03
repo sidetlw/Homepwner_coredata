@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface BNRNavDetailViewController : UINavigationController
-
+@property (nonatomic,copy) void (^deleteItemBlock)(void);
 @end

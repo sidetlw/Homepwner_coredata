@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PopAnimationViewController : UIViewController
-
+@interface PopAnimationViewController : UIViewController <UINavigationControllerDelegate,UIViewControllerTransitioningDelegate>
+-(instancetype)initWithNavigationController:(UINavigationController *)nav;
 @end

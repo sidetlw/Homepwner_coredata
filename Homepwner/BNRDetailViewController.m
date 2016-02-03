@@ -13,7 +13,8 @@
 #import "BNRItemStore.h"
 #import "BNRAssetTypeTableViewController.h"
 #import "AppDelegate.h"
-#import "NavigationInteractiveTransition.h"
+#import "PopAnimation.h"
+#import "BNRNavDetailViewController.h"
 
 @interface BNRDetailViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
@@ -25,8 +26,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *takePhotoButton;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *assetType;
-@property (nonatomic) NavigationInteractiveTransition *navigationInteractiveTransition;
-
 
 @end
 
@@ -63,11 +62,12 @@
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gestureTapped)];
     [self.view addGestureRecognizer:gesture];
     
-    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(popBackHandel:)];
-    panGesture.delegate = self;
-    [self.navigationController.view addGestureRecognizer:panGesture];
-    _navigationInteractiveTransition = [[NavigationInteractiveTransition alloc] init];
-    self.navigationController.delegate = self.navigationInteractiveTransition;
+    if (self.navigationVCInNew != nil) {
+        self.navigationVCInNew.deleteItemBlock = ^{
+            [[BNRItemStore shareStore] removeItem:self.item];
+        };
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -118,10 +118,6 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-//    self.item.itemName = self.nameField.text;
-//    self.item.serialNumber = self.serialField.text;
-//    self.item.valueInDollars = self.valueField.text.intValue;
-   
     [textField resignFirstResponder];
     return YES;
 }
@@ -148,32 +144,6 @@
 -(void)gestureTapped
 {
     [self.view endEditing:YES];
-}
-
--(void)popBackHandel:(UIPanGestureRecognizer *)gesture
-{
-    CGPoint transpoint = [gesture translationInView:self.view];
-    CGPoint point = [gesture locationInView:nil];
-    NSLog(@"translationInView :%f  %f  locationInView:,%f  %f",transpoint.x,transpoint.y,point.x,point.y);
-    CGFloat process = transpoint.x / self.view.bounds.size.width;
-    process = MIN( MAX(0.0, process),1.0);
-    
-    if (gesture.state == UIGestureRecognizerStateBegan) {
-        self.navigationInteractiveTransition.percentDrivenInteractiveTransition = [[UIPercentDrivenInteractiveTransition alloc] init];
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-    else if (gesture.state == UIGestureRecognizerStateChanged) {
-        [self.navigationInteractiveTransition.percentDrivenInteractiveTransition updateInteractiveTransition:process];
-    }
-    else if (gesture.state == UIGestureRecognizerStateEnded || gesture.state == UIGestureRecognizerStateCancelled) {
-        if (process > 0.5) {
-            [self.navigationInteractiveTransition.percentDrivenInteractiveTransition finishInteractiveTransition];
-        }
-        else {
-            [self.navigationInteractiveTransition.percentDrivenInteractiveTransition cancelInteractiveTransition];
-        }
-        self.navigationInteractiveTransition.percentDrivenInteractiveTransition = nil;
-    }
 }
 
 - (IBAction)cameraButtonTapped:(id)sender {
@@ -229,6 +199,7 @@
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setInteger:newValue forKey:BNRNextItemValuePrefsKey];
     }
+    
     [self.presentingViewController dismissViewControllerAnimated:YES completion:self.dismissBlock];
 }
 
@@ -292,11 +263,6 @@
     [super decodeRestorableStateWithCoder:coder];
 }
 
-#pragma mark - gesture delegate
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
-{
-    return [[self.navigationController viewControllers] count] != 1 && ![[self.navigationController valueForKey:@"_isTransitioning"] boolValue];
-}
 /*
 #pragma mark - Navigation
 

@@ -17,6 +17,7 @@
 		F15CCEDC1C2D804F004318F3 /* BNRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F15CCEDA1C2D804F004318F3 /* BNRDetailViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		F15CCEE01C2E79FA004318F3 /* DatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F15CCEDE1C2E79FA004318F3 /* DatePickerViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F15CCEE41C2F01B0004318F3 /* BNRImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F15CCEE31C2F01B0004318F3 /* BNRImageStore.m */; settings = {ASSET_TAGS = (); }; };
+		F1CBD5011C6127CA00F45384 /* BNRNavDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1CBD5001C6127CA00F45384 /* BNRNavDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F1DC05821C2BE3DB0074ED92 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DC05811C2BE3DB0074ED92 /* main.m */; };
 		F1DC05851C2BE3DB0074ED92 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DC05841C2BE3DB0074ED92 /* AppDelegate.m */; };
 		F1DC05881C2BE3DB0074ED92 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DC05871C2BE3DB0074ED92 /* ViewController.m */; };
@@ -29,7 +30,7 @@
 		F1DC05BB1C2BE7B50074ED92 /* BNRItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DC05BA1C2BE7B50074ED92 /* BNRItemStore.m */; settings = {ASSET_TAGS = (); }; };
 		F1DC05C61C2C28910074ED92 /* HeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1DC05C51C2C28910074ED92 /* HeadView.xib */; settings = {ASSET_TAGS = (); }; };
 		F1DEEA761C53528700F968D5 /* PopAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEEA751C53528700F968D5 /* PopAnimation.m */; settings = {ASSET_TAGS = (); }; };
-		F1DEEA791C5380CE00F968D5 /* NavigationInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEEA781C5380CE00F968D5 /* NavigationInteractiveTransition.m */; settings = {ASSET_TAGS = (); }; };
+		F1DEEA7C1C53947100F968D5 /* PopAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1DEEA7B1C53947100F968D5 /* PopAnimationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		F1F3A29E1C3A5D9200F9B31D /* BNRItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F3A29D1C3A5D9200F9B31D /* BNRItemCell.m */; settings = {ASSET_TAGS = (); }; };
 		F1F3A2A01C3A5DCF00F9B31D /* BNRItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F3A29F1C3A5DCF00F9B31D /* BNRItemCell.xib */; settings = {ASSET_TAGS = (); }; };
 		F1F3A2A81C3AAE3500F9B31D /* BNRImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F3A2A71C3AAE3500F9B31D /* BNRImageViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -83,6 +84,8 @@
 		F15CCEDE1C2E79FA004318F3 /* DatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatePickerViewController.m; sourceTree = "<group>"; };
 		F15CCEE21C2F01B0004318F3 /* BNRImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRImageStore.h; sourceTree = "<group>"; };
 		F15CCEE31C2F01B0004318F3 /* BNRImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRImageStore.m; sourceTree = "<group>"; };
+		F1CBD4FF1C6127CA00F45384 /* BNRNavDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRNavDetailViewController.h; sourceTree = "<group>"; };
+		F1CBD5001C6127CA00F45384 /* BNRNavDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRNavDetailViewController.m; sourceTree = "<group>"; };
 		F1DC057D1C2BE3DB0074ED92 /* Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Homepwner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1DC05811C2BE3DB0074ED92 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F1DC05831C2BE3DB0074ED92 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -104,8 +107,8 @@
 		F1DC05C51C2C28910074ED92 /* HeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeadView.xib; sourceTree = "<group>"; };
 		F1DEEA741C53528700F968D5 /* PopAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopAnimation.h; sourceTree = "<group>"; };
 		F1DEEA751C53528700F968D5 /* PopAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopAnimation.m; sourceTree = "<group>"; };
-		F1DEEA771C5380CE00F968D5 /* NavigationInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationInteractiveTransition.h; sourceTree = "<group>"; };
-		F1DEEA781C5380CE00F968D5 /* NavigationInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationInteractiveTransition.m; sourceTree = "<group>"; };
+		F1DEEA7A1C53947000F968D5 /* PopAnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopAnimationViewController.h; sourceTree = "<group>"; };
+		F1DEEA7B1C53947100F968D5 /* PopAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopAnimationViewController.m; sourceTree = "<group>"; };
 		F1F3A29C1C3A5D9200F9B31D /* BNRItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRItemCell.h; sourceTree = "<group>"; };
 		F1F3A29D1C3A5D9200F9B31D /* BNRItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRItemCell.m; sourceTree = "<group>"; };
 		F1F3A29F1C3A5DCF00F9B31D /* BNRItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRItemCell.xib; sourceTree = "<group>"; };
@@ -193,6 +196,8 @@
 				F1DC05C51C2C28910074ED92 /* HeadView.xib */,
 				F15CCED81C2D804F004318F3 /* BNRDetailViewController.h */,
 				F15CCED91C2D804F004318F3 /* BNRDetailViewController.m */,
+				F1CBD4FF1C6127CA00F45384 /* BNRNavDetailViewController.h */,
+				F1CBD5001C6127CA00F45384 /* BNRNavDetailViewController.m */,
 				F15CCEDA1C2D804F004318F3 /* BNRDetailViewController.xib */,
 				F10039CB1C40C24F00C3091F /* BNRAssetTypeTableViewController.h */,
 				F10039CC1C40C24F00C3091F /* BNRAssetTypeTableViewController.m */,
@@ -239,8 +244,8 @@
 			children = (
 				F1DEEA741C53528700F968D5 /* PopAnimation.h */,
 				F1DEEA751C53528700F968D5 /* PopAnimation.m */,
-				F1DEEA771C5380CE00F968D5 /* NavigationInteractiveTransition.h */,
-				F1DEEA781C5380CE00F968D5 /* NavigationInteractiveTransition.m */,
+				F1DEEA7A1C53947000F968D5 /* PopAnimationViewController.h */,
+				F1DEEA7B1C53947100F968D5 /* PopAnimationViewController.m */,
 			);
 			name = "back gesture";
 			sourceTree = "<group>";
@@ -399,14 +404,15 @@
 			files = (
 				F1F3A2FA1C3FA62E00F9B31D /* BNRItem.xcdatamodeld in Sources */,
 				F15CCEE41C2F01B0004318F3 /* BNRImageStore.m in Sources */,
+				F1DEEA7C1C53947100F968D5 /* PopAnimationViewController.m in Sources */,
 				F15CCEDB1C2D804F004318F3 /* BNRDetailViewController.m in Sources */,
 				F1F3A3031C3FB3F400F9B31D /* BNRItem+CoreDataProperties.m in Sources */,
 				F1DEEA761C53528700F968D5 /* PopAnimation.m in Sources */,
 				F1DC05B81C2BE5370074ED92 /* BNRItemsTableViewController.m in Sources */,
+				F1CBD5011C6127CA00F45384 /* BNRNavDetailViewController.m in Sources */,
 				F10039CD1C40C24F00C3091F /* BNRAssetTypeTableViewController.m in Sources */,
 				F1F3A2FD1C3FA81700F9B31D /* BNRImageTransformer.m in Sources */,
 				F1F3A29E1C3A5D9200F9B31D /* BNRItemCell.m in Sources */,
-				F1DEEA791C5380CE00F968D5 /* NavigationInteractiveTransition.m in Sources */,
 				F1F3A3041C3FB3F400F9B31D /* BNRItem.m in Sources */,
 				F1DC05881C2BE3DB0074ED92 /* ViewController.m in Sources */,
 				F1DC05851C2BE3DB0074ED92 /* AppDelegate.m in Sources */,

@@ -13,10 +13,13 @@
 #import "BNRItemCell.h"
 #import "BNRImageViewController.h"
 #import "BNRImageStore.h"
+#import "PopAnimationViewController.h"
+#import "PopAnimation.h"
+#import "BNRNavDetailViewController.h"
 
-@interface BNRItemsTableViewController () <UIDataSourceModelAssociation>
+@interface BNRItemsTableViewController () <UIDataSourceModelAssociation >
 @property (strong, nonatomic) IBOutlet UIView *headView;
-
+@property (nonatomic) PopAnimationViewController *popAnimationViewController;
 @end
 
 @implementation BNRItemsTableViewController
@@ -77,6 +80,12 @@
     
     self.tableView.restorationIdentifier = @"BNRItemsTableViewControllerTableView";
     self.navigationItem.backBarButtonItem =  [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:nil action:nil];
+    UINavigationController *nav = [self navigationController];
+    //self.popAnimationViewController = [[PopAnimationViewController alloc] initWithNavigationController:nav];
+    
+    self.tableView.tableFooterView = [UIView new];
+    [self.tableView reloadData];
+
   }
 
 - (void)didReceiveMemoryWarning {
@@ -88,7 +97,7 @@
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-    [self.tableView reloadData];
+   // [self.tableView reloadData];
 }
 
 
@@ -185,11 +194,16 @@
         [self.tableView reloadData];
     };
     
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:detailController];
+    BNRNavDetailViewController *navigationController = [[BNRNavDetailViewController alloc] initWithRootViewController:detailController];
+    detailController.navigationVCInNew = navigationController;
     navigationController.restorationIdentifier = NSStringFromClass([navigationController class]);
     
     navigationController.modalPresentationStyle = UIModalPresentationFormSheet;
     navigationController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    //self.transitioningDelegate = self;
+    //self.modalPresentationStyle = UIModalPresentationCustom;
+
     [self presentViewController:navigationController animated:YES completion:nil];
 //    NSInteger lastRow = [[[BNRItemStore shareStore] allItems] indexOfObject:item];
 //    NSIndexPath *indexpath = [NSIndexPath indexPathForRow:lastRow inSection:0];
@@ -330,6 +344,13 @@
     }
     return indexPath;
 }
+
+#pragma mark - UIViewControllerTransitioningDelegate
+- (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    return [[PopAnimation alloc] init];
+}
+
 
 /*
 // Override to support conditional rearranging of the table view.

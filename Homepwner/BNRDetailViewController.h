@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 @class BNRItem;
+@class BNRNavDetailViewController;
 
-@interface BNRDetailViewController : UIViewController <UITextFieldDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIPopoverPresentationControllerDelegate, UIViewControllerRestoration,UIGestureRecognizerDelegate>
+@interface BNRDetailViewController : UIViewController <UITextFieldDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UIPopoverPresentationControllerDelegate, UIViewControllerRestoration>
 @property (nonatomic) BNRItem *item;
 @property (nonatomic,copy) void (^dismissBlock)(void);
+@property (weak, nonatomic) BNRNavDetailViewController *navigationVCInNew;
 
 -(instancetype)initForNewItem:(BOOL)isNew;
 
